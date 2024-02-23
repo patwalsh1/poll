@@ -7,10 +7,10 @@ import { poll_backend } from "../../declarations/poll_backend";
 
 //1. LOCAL DATA
 const pollResults = {
-    "Rust": 0,
-    "Motoko": 0,
-    "TypeScript": 0,
-    "Python": 0
+    "dune": 0,
+    "beachandbay": 0,
+    "johnnys_texting": 0,
+    "colins_gf": 0
 };
 
 //2. EVENT LISTENERS

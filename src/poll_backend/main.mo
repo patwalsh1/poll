@@ -6,7 +6,7 @@ import Iter "mo:base/Iter";
 
 actor {
 
-  var question: Text = "What is your favorite programming language?";
+  var question: Text = "What are you looking forward to most?";
   var votes: RBTree.RBTree<Text, Nat> = RBTree.RBTree(Text.compare);
 
 
@@ -55,10 +55,10 @@ actor {
   };
 
   public func resetVotes() : async [(Text, Nat)] {
-      votes.put("Motoko", 0);
-      votes.put("Rust", 0);
-      votes.put("TypeScript", 0);
-      votes.put("Python", 0);
+      votes.put("dune", 0);
+      votes.put("beachandbay", 0);
+      votes.put("johnnys_texting", 0);
+      votes.put("colins_gf", 0);
       Iter.toArray(votes.entries())
   };
 
