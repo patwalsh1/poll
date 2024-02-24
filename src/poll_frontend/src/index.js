@@ -45,11 +45,17 @@ pollForm.addEventListener('submit', async (e) => {
   const formData = new FormData(pollForm);
   const checkedValue = formData.get("option");
 
+  const button = event.target.querySelector("button");
+  button.setAttribute("disabled", true);
+
   const updatedVoteCounts = await poll_backend.vote(checkedValue);
   console.log("Returning from await...")
   console.log(updatedVoteCounts);
   updateLocalVoteCounts(updatedVoteCounts);
   displayResults();
+
+  button.removeAttribute("disabled");
+
   return false;
 }, false);
 
