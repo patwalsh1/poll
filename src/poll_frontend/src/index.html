@@ -8,10 +8,39 @@
     <link href="../style.css" rel="stylesheet">
 
     <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
 
+      body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0a0a0a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.mob_container img {
+            display: none !important;
+        }
+
+        @media screen and (max-width: 1360px) {
+            .after_header {
+                margin-bottom: 0 !important;
+            }
+            .scroll_nav .outer_frame .nav_s,
+    .scroll_nav .outer_frame .ri_links,
+    .main_logo,
+    .nav_wrapper,
+    header .outer_frame .top_nav .inner_frame .sm_links,
+    header .outer_frame .top_nav .inner_frame .ri_links .booking_link,
+    header:after {
+        display: none
+    }
+        }
+        .footer_vid, .best_grnt {
+     display: none;
+    }
 
 
       .container {
@@ -100,6 +129,52 @@
       width: 50%;
       }
 
+      .footer-top {
+        width: 100%; display: flex; justify-content: space-between;
+      }
+    
+    .footer-top .footer-col {width: 25%;}
+            
+    .footer-col a {
+      font-family: 'Whitney-Book';
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 25px;
+      text-transform: uppercase; color: #fff;}
+      .footer-col a:hover {    color: #bc9b6a;
+      -webkit-transition: ease 0.3s;
+      -ms-transition: ease 0.3s;
+      -moz-transition: ease 0.3s;
+      -o-transition: ease 0.3s;
+      transition: ease 0.3s
+    }   
+.main_frame{
+width: 100%;
+padding-left: 5%;
+background: #0b0f32;
+
+}
+
+.footer-bottom {margin-top: 40px; margin-bottom: 30px; background-color:#666666; display:flow-root }
+    .footer-bottom img {margin-left: 13%; width: 13%;}
+    .footer-bottom img:nth-child(1) {margin-left: 0px; width: 18%;}
+
+footer .copy_section{background: #0b0f32;}
+footer .footer-col h3 {font-size: 24px; color: #fff;}
+
+.main_frame {
+background-image: url('../img/flower.png');
+background-repeat: no-repeat;
+background-position: top right;
+background-size: contain;
+}
+footer .inner_frame .pre_frame .sec_frame {
+  width: 290px;
+  background-color: coral;
+}
+footer .copy_section {margin-bottom: 10px; color: #fff;}
+
     </style>
 </head>
 <body class="m-0 p-0">
@@ -150,7 +225,7 @@
     <div class="p-10">
       <!--Card 1-->
       <div class=" w-full lg:max-w-full lg:flex">
-        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/mountain.jpg')" title="Mountain">
+        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../img/hs_radnor.png')" title="Mountain">
         </div>
         <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
           <div class="mb-8">
@@ -177,7 +252,7 @@
     <div class="p-10">
       <!--Card 1-->
       <div class=" w-full lg:max-w-full lg:flex">
-        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/mountain.jpg')" title="Mountain">
+        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../img/hs_conestoga.png')" title="school">
         </div>
         <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
           <div class="mb-8">
@@ -250,6 +325,99 @@
       </div>
     </div>
   </div>
+
+
+  <footer>
+    <div class="main_frame">
+    
+    <div class="inner_frame">
+      <div class="sec_frame">
+        <a href="/" class="logo_link">
+        <img class="lazy" alt="Kahala logo" width="226" data-src="https://www.kahalaresort.com/wp-content/uploads/Logo-1.svg"
+                src="https://www.kahalaresort.com/wp-content/uploads/Logo-1.svg">
+        </a>
+        <p style="margin-bottom: 0px;">
+    <strong>
+    The Kahala Hotel &amp; Resort
+    </strong><br>
+   <a class="m-link" style="color: #fff;" target="_blank" href="https://goo.gl/maps/qHwcZiYLYiTHcUHk6">5000 Kahala Avenue
+    <br>
+    Honolulu, Hawaii, 96816 </a>
+</p>
+<div class="footer-social" style="display: flex;">
+            <a href="https://www.facebook.com/KahalaHotelandResort" aria-label="facebook link" target="_blank"><span class="fab fa-facebook-f"></span></a>
+                <a href="https://www.instagram.com/kahala_resort/" aria-label="instagram link" target="_blank"><span class="fab fa-instagram"></span></a>
+<a href="https://www.pinterest.com/kahalaresort/" aria-label="pinterest link" target="_blank"><span class="fab fa-pinterest-p"></span></a>
+<a href="https://www.youtube.com/user/TheKahalaHotel" aria-label="youtube link" target="_blank"><span class="fab fa-youtube"></span></a>
+</div>                        
+<p style="color: #fff;">
+    US &amp; Canada <a href="tel:1-866-318-4579">+1 (866) 318-4579</a>
+    <br>
+    International<a href="tel:+18083699480">+1 (808) 369-9480</a>
+</p>                        </p>
+    </div>
+        <div class="pre_frame">
+       <!--     <div class="bg_frame">
+
+            </div>    -->
+           
+        </div>
+
+        
+<div class="footer-top">
+  <div class="footer-col">
+    <h3 class="tracking-wide">Media & Travel Agents</h3>
+    <div><a href="/luxury-hotel/press-room/">PRESS ROOM</a><br>
+        <a href="/luxury-hotel/press-releases/">PRESS RELEASES</a><br>
+        <a href="/luxury-hotel/hi-res-image-gallery/accommodation/">HIGH RES IMAGES</a><br>
+        <a href="/media-inquiry/">MEDIA INQUIRY FORM</a><br>
+        <a href="/luxury-hotel/travel-agent/">TRAVEL AGENTS</a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h3 class="tracking-wide">Guest Information</h3>
+    <div><a href="/luxury-hotel/faqs/">FAQS</a><br>
+        <a href="/in-room-information/">IN ROOM INFORMATION</a><br>
+        <a href="/luxury-hotel/lost-and-found/">LOST AND FOUND FORM</a><br>
+        <a href="/resort-accommodation-map/">ACCOMMODATION MAP</a><br>
+        <a href="/our-resort/galleries/magazine/">KAHALA LIFE MAGAZINE</a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h3 class="tracking-wide">Other</h3>
+    <div><a href="/careers/">CAREERS</a><br>
+        <a href="/luxury-hotel/privacy-policy/">PRIVACY POLICY</a><br>
+        <a href="/luxury-hotel/gdpr-faqs/">GDPR INFORMATION</a><br>
+        <a href="/sitemap/">SITE MAP</a><br>
+        <a id="accessibilityWidget" tabindex="0">ACCESSIBILITY WIDGET</a> 
+    </div>
+  </div>
+  <div class="footer-col">
+    <h3 class="tracking-wide">Newsletter</h3>
+    <div>
+        <p style="color: #fff;" class="mb-10">Subscribe to our newsletter for regular updates and special offers.</p>
+        <p><a class="btn gold" href="/Email-offers">Subscribe </a></p>
+    </div>
+</div>
+</div>
+
+<div class="footer-bottom">
+<a href="https://www.lhw.com/leaders-club-hub?hotel=7033" target="_blank">
+  <img width="160" class="" src="https://www.kahalaresort.com/wp-content/uploads/Leaders-Club-Logo-new.png"   alt="Leading hotels"></a>
+  <img width="160" class="" src="https://www.kahalaresort.com/wp-content/uploads/Award-Logos3.png" alt="Okura">
+  <img width="160" class="" src="https://www.kahalaresort.com/wp-content/uploads/Award-Logos4.png" alt="four diamond award">
+</div>
+<div class="copy_section text-center">
+        <p>© The Kahala Hotel &amp; Resort 2024. All rights reserved.</p>
+    </div>
+    <div class="scroll_up">
+        <span class="fas fa-chevron-up"></span>
+    </div>
+</div>
+
+
+   
+</footer>
 
 
 </body>
