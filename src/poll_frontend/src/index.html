@@ -1,424 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walsh on the Internet Computer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walsh on the Internet Computer</title>
 
-    <link href="../style.css" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet">
+  <link href="../style2.css" rel="stylesheet">
 
-    <style>
-
-      body {
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #0a0a0a;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-.mob_container img {
-            display: none !important;
-        }
-
-        @media screen and (max-width: 1360px) {
-            .after_header {
-                margin-bottom: 0 !important;
-            }
-            .scroll_nav .outer_frame .nav_s,
-    .scroll_nav .outer_frame .ri_links,
-    .main_logo,
-    .nav_wrapper,
-    header .outer_frame .top_nav .inner_frame .sm_links,
-    header .outer_frame .top_nav .inner_frame .ri_links .booking_link,
-    header:after {
-        display: none
-    }
-        }
-        .footer_vid, .best_grnt {
-     display: none;
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #0a0a0a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
     }
 
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        position: relative;
-      }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
 
 
-      h1 {
-        font-size: 32px;
-        margin-bottom: 20px;
-        text-align: center;
-        margin-top: 0;
-      }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-align: center;
+      margin-top: 0;
+    }
 
-      h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        text-align: center;
-      }
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
 
-      form {
-        margin-bottom: 20px;
-        border: 2px solid #8bc34a;
-        padding: 20px;
-        border-radius: 5px;
-      }
+    form {
+      margin-bottom: 20px;
+      border: 2px solid #8bc34a;
+      padding: 20px;
+      border-radius: 5px;
+    }
 
-      label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 18px;
-        text-align: left;
-      }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      text-align: left;
+    }
 
-      input[type="radio"] {
-        margin-right: 5px;
-      }
+    input[type="radio"] {
+      margin-right: 5px;
+    }
 
-      button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        border: none;
-        color: #fff;
-        font-size: 18px;
-        cursor: pointer;
-        border-radius: 5px;
-      }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-      button#reset {
-        background-color: #dc3545;
-        
-        bottom: 20px;
-        left: 20px;
-        margin: 10px 0; /* Add margin */
-      }
+    button#reset {
+      background-color: #dc3545;
 
-      button:hover {
-        background-color: #0056b3;
-      }
+      bottom: 20px;
+      left: 20px;
+      margin: 10px 0;
+      /* Add margin */
+    }
 
-      button[disabled]{
-        background-color: #cccccc;
-        color: #666666;
-      }
+    button:hover {
+      background-color: #0056b3;
+    }
 
-      #vote_btn {
-        background-color: blue;
-      }
+    button[disabled] {
+      background-color: #cccccc;
+      color: #666666;
+    }
 
-      #results {
-        margin-top: 20px;
-        font-size: 18px;
-        border: 2px solid #8bc34a;
-        padding: 20px;
-        border-radius: 5px;
-        position: relative;
-      }
+    #vote_btn {
+      background-color: blue;
+    }
 
-      .center {
+    #results {
+      margin-top: 20px;
+      font-size: 18px;
+      border: 2px solid #8bc34a;
+      padding: 20px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .center {
       display: block;
       margin-left: auto;
       margin-right: auto;
       width: 50%;
-      }
+    }
 
-      .footer-top {
-        width: 100%; display: flex; justify-content: space-between;
-      }
-    
-    .footer-top .footer-col {width: 25%;}
-            
+    .footer-top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer-top .footer-col {
+      width: 33%;
+      padding-top: 30px;
+    }
+
     .footer-col a {
       font-family: 'Whitney-Book';
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 300;
       font-size: 12px;
       line-height: 25px;
-      text-transform: uppercase; color: #fff;}
-      .footer-col a:hover {    color: #bc9b6a;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .footer-col a:hover {
+      color: #bc9b6a;
       -webkit-transition: ease 0.3s;
       -ms-transition: ease 0.3s;
       -moz-transition: ease 0.3s;
       -o-transition: ease 0.3s;
       transition: ease 0.3s
-    }   
-.main_frame{
-width: 100%;
-padding-left: 5%;
-background: #0b0f32;
+    }
 
-}
+    .main_frame {
+      width: 100%;
+      padding-left: 5%;
+      background: #0b0f32;
 
-.footer-bottom {margin-top: 40px; margin-bottom: 30px; background-color:#666666; display:flow-root }
-    .footer-bottom img {margin-left: 13%; width: 13%;}
-    .footer-bottom img:nth-child(1) {margin-left: 0px; width: 18%;}
+    }
 
-footer .copy_section{background: #0b0f32;}
-footer .footer-col h3 {font-size: 24px; color: #fff;}
+    .footer-bottom {
+      margin-top: 40px;
+      margin-bottom: 30px;
+      margin-right: 70px;
+      
+    }
 
-.main_frame {
-background-image: url('../img/flower.png');
-background-repeat: no-repeat;
-background-position: top right;
-background-size: contain;
-}
-footer .inner_frame .pre_frame .sec_frame {
-  width: 290px;
-  background-color: coral;
-}
-footer .copy_section {margin-bottom: 10px; color: #fff;}
+    footer img {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 100%;
+      height: auto;
+    }
 
-    </style>
+    footer .copy_section {
+      background: #0b0f32;
+      position: absolute;
+      bottom: 0;
+    }
+
+    footer .footer-col h3 {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .main_frame {
+      background-image: url('../img/flower.png');
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: contain;
+    }
+
+    footer .inner_frame .pre_frame .sec_frame {
+      width: 290px;
+      background-color: coral;
+    }
+
+    footer .copy_section {
+
+      color: #fff;
+    }
+
+  </style>
 </head>
+
 <body class="m-0 p-0">
 
-    <div class="container">
-      
-      <img src="../logo2.svg" class="block mx-auto w-1/2">
+  <div class="container">
 
-      <div class="title-container">
-        <h1>Walsh's Question of the Day</h1>
+    <img src="../logo2.svg" class="block mx-auto w-1/2">
+
+    <div class="title-container">
+      <h1>Walsh's Question of the Day</h1>
+    </div>
+
+    <h1 class="bg-sky-950 text-white tracking-wide">
+      Hello world...Let's Vote!
+    </h1>
+
+    <h2 id="question"></h2>
+
+    <!-- Form where users vote -->
+    <div class="form-container">
+      <form id="radioForm">
+        <label>
+          <input type="radio" name="option" value="dune"> Dune 2 soon!
+        </label><br>
+        <label>
+          <input type="radio" name="option" value="beachandbay"> Beach and Bay Half Marathon
+        </label><br>
+        <label>
+          <input type="radio" name="option" value="johnnys_texting"> Johnny finally not sending a 💩 text
+        </label><br>
+        <label>
+          <input type="radio" name="option" value="colins_gf"> Colins new girlfriend
+        </label><br>
+        <button type="submit" id="vote_btn">Vote</button>
+      </form>
+    </div>
+
+    <!-- Poll results appear here-->
+    <h2 id="results-title">Results</h2>
+    <div id="results"></div>
+    <div class="title-container">
+      <button id="reset">Reset Poll</button>
+    </div>
+
+  </div>
+
+
+  <div class="p-10">
+    <!--Card 1-->
+    <div class=" w-full lg:max-w-full lg:flex">
+      <div
+        class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+        style="background-image: url('../img/hs_radnor.png')" title="Mountain">
       </div>
-
-      <h1 class="bg-sky-950 text-white tracking-wide">
-        Hello world...Let's Vote!
-      </h1>
-
-      <h2 id="question"></h2>
-
-      <!-- Form where users vote -->
-      <div class="form-container">
-        <form id="radioForm">
-            <label>
-                <input type="radio" name="option" value="dune"> Dune 2 soon!
-            </label><br>
-            <label>
-                <input type="radio" name="option" value="beachandbay"> Beach and Bay Half Marathon
-            </label><br>
-            <label>
-                <input type="radio" name="option" value="johnnys_texting"> Johnny finally not sending a 💩 text
-            </label><br>
-            <label>
-                <input type="radio" name="option" value="colins_gf"> Colins new girlfriend
-            </label><br>
-            <button type="submit" id="vote_btn" >Vote</button>
-        </form>
-      </div>
-
-      <!-- Poll results appear here-->
-      <h2 id="results-title">Results</h2>
-      <div id="results"></div>
-      <div class="title-container">
-        <button id="reset">Reset Poll</button>
+      <div
+        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+        <div class="mb-8">
+          <p class="text-sm text-gray-600 flex items-center">
+            <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path
+                d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+            </svg>
+            Genesis Member
+          </p>
+          <div class="text-gray-900 font-bold text-xl mb-2">Radnor High School</div>
+          <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
+            quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
         </div>
-    
-      </div> 
-
-
-    <div class="p-10">
-      <!--Card 1-->
-      <div class=" w-full lg:max-w-full lg:flex">
-        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../img/hs_radnor.png')" title="Mountain">
-        </div>
-        <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-          <div class="mb-8">
-            <p class="text-sm text-gray-600 flex items-center">
-              <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-              </svg>
-              Genesis Member
-            </p>
-            <div class="text-gray-900 font-bold text-xl mb-2">Radnor High School</div>
-            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-          </div>
-          <div class="flex items-center">
-            <img class="w-10 h-10 rounded-full mr-4" src="../img/pat.png" alt="Avatar of Writer">
-            <div class="text-sm">
-              <p class="text-gray-900 leading-none">John Smith</p>
-              <p class="text-gray-600">Aug 18</p>
-            </div>
+        <div class="flex items-center">
+          <img class="w-10 h-10 rounded-full mr-4" src="../img/pat.png" alt="Avatar of Writer">
+          <div class="text-sm">
+            <p class="text-gray-900 leading-none">John Smith</p>
+            <p class="text-gray-600">Aug 18</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="p-10">
-      <!--Card 1-->
-      <div class=" w-full lg:max-w-full lg:flex">
-        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../img/hs_conestoga.png')" title="school">
+  <div class="p-10">
+    <!--Card 1-->
+    <div class=" w-full lg:max-w-full lg:flex">
+      <div
+        class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+        style="background-image: url('../img/hs_conestoga.png')" title="school">
+      </div>
+      <div
+        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+        <div class="mb-8">
+          <p class="text-sm text-gray-600 flex items-center">
+            <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path
+                d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+            </svg>
+            Genesis Member
+          </p>
+          <div class="text-gray-900 font-bold text-xl mb-2">Conestoga High School</div>
+          <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
+            quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
         </div>
-        <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-          <div class="mb-8">
-            <p class="text-sm text-gray-600 flex items-center">
-              <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-              </svg>
-              Genesis Member
-            </p>
-            <div class="text-gray-900 font-bold text-xl mb-2">Conestoga High School</div>
-            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-          </div>
-          <div class="flex items-center">
-            <img class="w-10 h-10 rounded-full mr-4" src="../img/pat.png" alt="Avatar of Writer">
-            <div class="text-sm">
-              <p class="text-gray-900 leading-none">John Smith</p>
-              <p class="text-gray-600">Aug 18</p>
-            </div>
+        <div class="flex items-center">
+          <img class="w-10 h-10 rounded-full mr-4" src="../img/pat.png" alt="Avatar of Writer">
+          <div class="text-sm">
+            <p class="text-gray-900 leading-none">John Smith</p>
+            <p class="text-gray-600">Aug 18</p>
           </div>
         </div>
       </div>
     </div>
-    
-    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-      <!--Card 1-->
-      <div class="rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="../img/soccer.jpg" alt="sports">
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Youth and Adult Teams</div>
-          <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-        </div>
+  </div>
+
+  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+    <!--Card 1-->
+    <div class="rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="../img/soccer.jpg" alt="sports">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Youth and Adult Teams</div>
+        <p class="text-gray-700 text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis
+          eaque, exercitationem praesentium nihil.
+        </p>
       </div>
-      <!--Card 2-->
-      <div class="rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="../img/refs.png" alt="refs">
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">Referree Training and Job Postings</div>
-          <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#summer</span>
-        </div>
-      </div>
-  
-      <!--Card 3-->
-      <div class="rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="../img/auditorm.png" alt="Schools">
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">School Resources</div>
-          <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#fall</span>
-        </div>
+      <div class="px-6 pt-4 pb-2">
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
       </div>
     </div>
+    <!--Card 2-->
+    <div class="rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="../img/refs.png" alt="refs">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Referree Training and Job Postings</div>
+        <p class="text-gray-700 text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis
+          eaque, exercitationem praesentium nihil.
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#summer</span>
+      </div>
+    </div>
+
+    <!--Card 3-->
+    <div class="rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="../img/auditorm.png" alt="Schools">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">School Resources</div>
+        <p class="text-gray-700 text-base">
+          Lorem ipsum dolor sit amet, consectetur dadipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis
+          eaque, exercitationem praesentium nihil.
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#fall</span>
+      </div>
+    </div>
+  </div>
   </div>
 
 
   <footer>
     <div class="main_frame">
-    
-    <div class="inner_frame">
-      <div class="sec_frame">
-        <a href="/" class="logo_link">
-        <img class="lazy" alt="Kahala logo" width="226" data-src="https://www.kahalaresort.com/wp-content/uploads/Logo-1.svg"
-                src="https://www.kahalaresort.com/wp-content/uploads/Logo-1.svg">
-        </a>
-        <p style="margin-bottom: 0px;">
-    <strong>
-    The Kahala Hotel &amp; Resort
-    </strong><br>
-   <a class="m-link" style="color: #fff;" target="_blank" href="https://goo.gl/maps/qHwcZiYLYiTHcUHk6">5000 Kahala Avenue
-    <br>
-    Honolulu, Hawaii, 96816 </a>
-</p>
-<div class="footer-social" style="display: flex;">
-            <a href="https://www.facebook.com/KahalaHotelandResort" aria-label="facebook link" target="_blank"><span class="fab fa-facebook-f"></span></a>
-                <a href="https://www.instagram.com/kahala_resort/" aria-label="instagram link" target="_blank"><span class="fab fa-instagram"></span></a>
-<a href="https://www.pinterest.com/kahalaresort/" aria-label="pinterest link" target="_blank"><span class="fab fa-pinterest-p"></span></a>
-<a href="https://www.youtube.com/user/TheKahalaHotel" aria-label="youtube link" target="_blank"><span class="fab fa-youtube"></span></a>
-</div>                        
-<p style="color: #fff;">
-    US &amp; Canada <a href="tel:1-866-318-4579">+1 (866) 318-4579</a>
-    <br>
-    International<a href="tel:+18083699480">+1 (808) 369-9480</a>
-</p>                        </p>
-    </div>
+
+      <div class="inner_frame">
+
         <div class="pre_frame">
-       <!--     <div class="bg_frame">
+          <!--     <div class="bg_frame">
 
             </div>    -->
-           
+
         </div>
 
-        
-<div class="footer-top">
-  <div class="footer-col">
-    <h3 class="tracking-wide">Media & Travel Agents</h3>
-    <div><a href="/luxury-hotel/press-room/">PRESS ROOM</a><br>
-        <a href="/luxury-hotel/press-releases/">PRESS RELEASES</a><br>
-        <a href="/luxury-hotel/hi-res-image-gallery/accommodation/">HIGH RES IMAGES</a><br>
-        <a href="/media-inquiry/">MEDIA INQUIRY FORM</a><br>
-        <a href="/luxury-hotel/travel-agent/">TRAVEL AGENTS</a>
-    </div>
-  </div>
-  <div class="footer-col">
-    <h3 class="tracking-wide">Guest Information</h3>
-    <div><a href="/luxury-hotel/faqs/">FAQS</a><br>
-        <a href="/in-room-information/">IN ROOM INFORMATION</a><br>
-        <a href="/luxury-hotel/lost-and-found/">LOST AND FOUND FORM</a><br>
-        <a href="/resort-accommodation-map/">ACCOMMODATION MAP</a><br>
-        <a href="/our-resort/galleries/magazine/">KAHALA LIFE MAGAZINE</a>
-    </div>
-  </div>
-  <div class="footer-col">
-    <h3 class="tracking-wide">Other</h3>
-    <div><a href="/careers/">CAREERS</a><br>
-        <a href="/luxury-hotel/privacy-policy/">PRIVACY POLICY</a><br>
-        <a href="/luxury-hotel/gdpr-faqs/">GDPR INFORMATION</a><br>
-        <a href="/sitemap/">SITE MAP</a><br>
-        <a id="accessibilityWidget" tabindex="0">ACCESSIBILITY WIDGET</a> 
-    </div>
-  </div>
-  <div class="footer-col">
-    <h3 class="tracking-wide">Newsletter</h3>
-    <div>
-        <p style="color: #fff;" class="mb-10">Subscribe to our newsletter for regular updates and special offers.</p>
-        <p><a class="btn gold" href="/Email-offers">Subscribe </a></p>
-    </div>
-</div>
-</div>
 
-<div class="footer-bottom">
-<a href="https://www.lhw.com/leaders-club-hub?hotel=7033" target="_blank">
-  <img width="160" class="" src="https://www.kahalaresort.com/wp-content/uploads/Leaders-Club-Logo-new.png"   alt="Leading hotels"></a>
-  <img width="160" class="" src="https://www.kahalaresort.com/wp-content/uploads/Award-Logos3.png" alt="Okura">
-  <img width="160" class="" src="https://www.kahalaresort.com/wp-content/uploads/Award-Logos4.png" alt="four diamond award">
-</div>
-<div class="copy_section text-center">
-        <p>© The Kahala Hotel &amp; Resort 2024. All rights reserved.</p>
-    </div>
-    <div class="scroll_up">
-        <span class="fas fa-chevron-up"></span>
-    </div>
-</div>
+        <div class="footer-top">
+          <div class="footer-col">
+            <h3>Media & Travel Agents</h3>
+            <div><a href="../login.html">LOGIN</a><br>
+              <a href="/luxury-hotel/press-releases/">PRESS RELEASES</a><br>
+              <a href="/luxury-hotel/hi-res-image-gallery/accommodation/">HIGH RES IMAGES</a><br>
+              <a href="/media-inquiry/">MEDIA INQUIRY FORM</a><br>
+              <a href="/luxury-hotel/travel-agent/">TRAVEL AGENTS</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Guest Information</h3>
+            <div><a href="/luxury-hotel/faqs/">FAQS</a><br>
+              <a href="/in-room-information/">IN ROOM INFORMATION</a><br>
+              <a href="/luxury-hotel/lost-and-found/">LOST AND FOUND FORM</a><br>
+              <a href="/resort-accommodation-map/">ACCOMMODATION MAP</a><br>
+              <a href="/our-resort/galleries/magazine/">KAHALA LIFE MAGAZINE</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Newsletter</h3>
+            <div>
+              <p style="color: #fff;" class="mb-10">Subscribe to our newsletter for regular updates and special offers.
+              </p>
+              <p><a class="btn gold" href="/Email-offers">Subscribe </a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+
+          
+              <img width="160" class="" src="https://www.kahalaresort.com/wp-content/uploads/Award-Logos4.png"
+              alt="four diamond award">    
+          <img width="160" class="" src="https://www.kahalaresort.com/wp-content/uploads/Award-Logos3.png" alt="Okura">
+          <a href="https://www.lhw.com/leaders-club-hub?hotel=7033" target="_blank">
+            <img width="160" class="" src="https://www.kahalaresort.com/wp-content/uploads/Leaders-Club-Logo-new.png"
+              alt="Leading hotels"></a>
+        </div>
+
+        <div class="copy_section text-center">
+          <p>© Walsh Enterprises 2024. All rights reserved.</p>
+        </div>
 
 
-   
-</footer>
+  </footer>
 
 
 </body>
+
 </html>
