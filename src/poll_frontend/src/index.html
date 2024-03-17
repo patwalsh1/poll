@@ -16,7 +16,8 @@
       font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
       font-weight: 400;
       line-height: 1.5;
-      color: #0a0a0a;
+      color: white;
+      background-color: black;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale
     }
@@ -46,16 +47,17 @@
 
     form {
       margin-bottom: 20px;
-      border: 2px solid #8bc34a;
+      border: 10px solid #0b0f32;
       padding: 20px;
-      border-radius: 5px;
+      border-radius: 15px;
     }
 
     label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       font-size: 18px;
       text-align: left;
+      color: #fff;
     }
 
     input[type="radio"] {
@@ -74,11 +76,9 @@
 
     button#reset {
       background-color: #dc3545;
-
       bottom: 20px;
       left: 20px;
       margin: 10px 0;
-      /* Add margin */
     }
 
     button:hover {
@@ -97,10 +97,11 @@
     #results {
       margin-top: 20px;
       font-size: 18px;
-      border: 2px solid #8bc34a;
       padding: 20px;
       border-radius: 5px;
       position: relative;
+
+      border: 10px solid #0b0f32;
     }
 
     .center {
@@ -144,7 +145,6 @@
       width: 100%;
       padding-left: 5%;
       background: #0b0f32;
-
     }
 
     .footer-bottom {
@@ -165,6 +165,7 @@
       background: #0b0f32;
       position: absolute;
       bottom: 0;
+      color: #fff;
     }
 
     footer .footer-col h3 {
@@ -177,16 +178,7 @@
       background-repeat: no-repeat;
       background-position: top right;
       background-size: contain;
-    }
-
-    footer .inner_frame .pre_frame .sec_frame {
-      width: 290px;
-      background-color: coral;
-    }
-
-    footer .copy_section {
-
-      color: #fff;
+      position: relative;
     }
 
   </style>
@@ -209,7 +201,7 @@
     <h2 id="question"></h2>
 
     <!-- Form where users vote -->
-    <div class="form-container">
+    <div class="text-white">
       <form id="radioForm">
         <label>
           <input type="radio" name="option" value="dune"> Dune 2 soon!
@@ -307,7 +299,7 @@
       <img class="w-full" src="../img/soccer.jpg" alt="sports">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">Youth and Adult Teams</div>
-        <p class="text-gray-700 text-base">
+        <p class="text-white-700 text-base">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis
           eaque, exercitationem praesentium nihil.
         </p>
@@ -326,7 +318,7 @@
       <img class="w-full" src="../img/refs.png" alt="refs">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">Referree Training and Job Postings</div>
-        <p class="text-gray-700 text-base">
+        <p class="text-white-700 text-base">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis
           eaque, exercitationem praesentium nihil.
         </p>
@@ -346,7 +338,7 @@
       <img class="w-full" src="../img/auditorm.png" alt="Schools">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">School Resources</div>
-        <p class="text-gray-700 text-base">
+        <p class="text-white-700 text-base">
           Lorem ipsum dolor sit amet, consectetur dadipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis
           eaque, exercitationem praesentium nihil.
         </p>
